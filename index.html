@@ -1,0 +1,117 @@
+<html>
+<head>
+  <base href="." />
+  <title>Personal Finance Tracker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/chart.js" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Finance Tracker</h1>
+      <button class="theme-toggle" id="theme-toggle">
+        <span id="theme-icon">🌙</span>
+        <span id="theme-text">Dark Mode</span>
+      </button>
+    </div>
+    
+    <div class="datetime-display">
+      <h3 id="current-time"></h3>
+      <p id="current-date"></p>
+    </div>
+    
+    <div class="balance-card">
+      <h2>Total Balance</h2>
+      <h1 id="total-balance">$0.00</h1>
+      <div style="display: flex; gap: 2rem; margin-top: 1rem;">
+        <div>
+          <p>Income</p>
+          <h3 id="total-income" style="color: var(--primary)">$0.00</h3>
+        </div>
+        <div>
+          <p>Expenses</p>
+          <h3 id="total-expenses" style="color: #e74c3c">$0.00</h3>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-card">
+          <h4>Avg. Transaction</h4>
+          <p id="avg-transaction">$0.00</p>
+        </div>
+        <div class="stat-card">
+          <h4>This Month</h4>
+          <p id="month-total">$0.00</p>
+        </div>
+        <div class="stat-card">
+          <h4>Largest Expense</h4>
+          <p id="largest-expense">$0.00</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="charts-container">
+      <div class="chart-card">
+        <h3>Spending by Category</h3>
+        <canvas id="category-chart" style="width: 50%; height: 300px;"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Monthly Overview</h3>
+        <canvas id="monthly-chart" style="width: 50%; height: 300px;"></canvas>
+      </div>
+    </div>
+
+    <div class="transaction-list">
+      <h2>Recent Transactions</h2>
+      <div class="search-filter">
+        <input type="text" id="search" placeholder="Search transactions...">
+        <select id="category-filter">
+        </select>
+      </div>
+      <div id="transactions"></div>
+    </div>
+  </div>
+
+  <div class="add-transaction" id="add-btn">+</div>
+
+  <div class="modal" id="transaction-modal">
+    <div class="modal-content">
+      <h2>Add Transaction</h2>
+      <form id="transaction-form">
+        <div class="input-group">
+          <label>Description</label>
+          <input type="text" id="description" required>
+        </div>
+        <div class="input-group">
+          <label>Amount</label>
+          <input type="number" id="amount" step="0.01" required>
+        </div>
+        <div class="input-group">
+          <label>Type</label>
+          <select id="type">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label>Category</label>
+          <select id="category">
+            <option value="food">🍔 Food</option>
+            <option value="transport">🚗 Transport</option>
+            <option value="shopping">🛍️ Shopping</option>
+            <option value="entertainment">🎮 Entertainment</option>
+            <option value="bills">📃 Bills</option>
+            <option value="salary">💰 Salary</option>
+            <option value="investment">📈 Investment</option>
+            <option value="other">📦 Other</option>
+          </select>
+        </div>
+        <button type="submit">Add Transaction</button>
+      </form>
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+</html>
