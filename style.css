@@ -228,3 +228,8 @@ canvas {
   background: var(--hover-bg);
   text-align: center;
 }
+
+.author-text {
+    text-align: center;
+    padding-bottom: 20px;
+}
