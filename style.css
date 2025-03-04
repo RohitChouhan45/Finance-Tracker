@@ -2,10 +2,11 @@
   --primary: #2ecc71;
   --background: #f5dede;
   --text: #2c3e50;
+  --text-secondary: #666;
   --shadow: rgba(0, 0, 0, 0.1);
-  --card-bg: rgb(255, 255, 255);
+  --card-bg: #ffffff;
   --border: #eee;
-  --hover-bg: #f5dede;
+  --hover-bg: #f5f5f5;
 }
 
 [data-theme="dark"] {
@@ -29,13 +30,13 @@ body {
   background: var(--background);
   color: var(--text);
   min-height: 100vh;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 20px 50px;
 }
 
 .header {
@@ -43,18 +44,6 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
-}
-
-.theme-toggle {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text);
 }
 
 .datetime-display {
@@ -232,4 +221,478 @@ canvas {
 .author-text {
     text-align: center;
     padding-bottom: 20px;
+}
+
+.budget-container {
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px var(--shadow);
+}
+
+.investment-container {
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px var(--shadow);
+  margin-top: 30px;
+ }
+
+.budget-investment-header {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.budget-investment-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.budget-investment-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+.budget-investment-button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.budget-investment-button:hover {
+  background: #27ae60;
+}
+
+header {
+    background: var(--primary);
+    padding: 1rem;
+    text-align: center;
+}
+
+.header-button {
+    background: var(--card-bg);
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header-button:hover {
+    background: var(--text);
+    color: var(--card-bg);
+}
+
+.budget-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: var(--background-secondary);
+    border-radius: 5px;
+}
+
+#budget-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#budget-list li {
+    margin-bottom: 10px;
+}
+
+.budget {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px var(--shadow);
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px var(--shadow);
+}
+
+/* Add these styles for expenses list and remaining budget */
+.expense-list-container {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+#expenseList {
+    list-style: none;
+    padding: 0;
+}
+
+#expenseList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    background: var(--hover-bg);
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+}
+
+#expenseList li:hover {
+    transform: translateX(5px);
+}
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.expense-description {
+    font-weight: 500;
+}
+
+.expense-amount {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+#remainingBudget {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 2rem 0;
+    box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.expense-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.expense-header h2 {
+    margin: 0;
+    color: var(--text);
+}
+
+.total-expenses {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Add these styles and modify existing ones */
+.budget-box {
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow);
+    margin-bottom: 1.5rem;
+}
+
+.input-box {
+    margin-bottom: 1rem;
+}
+
+.chart-box {
+    margin: 1rem auto;
+    padding: 1.5rem;
+}
+
+.chart-box .chart-container {
+    border: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.display-box {
+    margin-top: 1rem;
+}
+
+.section-title {
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+}
+
+.budget-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 0;
+}
+
+.input-section {
+    margin-bottom: 1rem;
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.input-section input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--background);
+    color: var(--text);
+    transition: border-color 0.2s ease;
+}
+
+.input-section input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.2);
+}
+
+.button-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    grid-column: 1 / -1;
+}
+
+.button-container button {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+#addExpense {
+    background: var(--primary);
+    color: white;
+}
+
+#calculateBudget {
+    background: #3498db;
+    color: white;
+}
+
+.button-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Update chart container styles */
+.chart-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Add some hover effects to expense items */
+.expense-item {
+    background: var(--background);
+    padding: 0.8rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.expense-item:hover {
+    transform: translateX(5px);
+    background: var(--hover-bg);
+}
+
+/* Investment specific styles */
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.chart-section {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.investment-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.summary-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+.summary-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.summary-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: var(--border);
+    border-radius: 5px;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), #27ae60);
+    transition: width 0.3s ease;
+}
+
+.filter-container {
+    margin-left: auto;
+}
+
+.filter-container select {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text);
+}
+
+.investment-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: var(--card-bg);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.investment-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--hover-bg);
+    border-radius: 50%;
+}
+
+.investment-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.investment-type {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.reset-button {
+    background: #e74c3c !important;
+    color: white;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+    background: #c0392b !important;
+    transform: scale(1.05);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text);
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--hover-bg);
+    transform: translateY(-2px);
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+}
+
+/* Smooth transitions for theme changes */
+.card, .button, .input, .modal {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .budget-box {
+        padding: 1rem;
+    }
 }

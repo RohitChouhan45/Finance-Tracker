@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Finance Tracker</h1>
+            <div class="header-controls">
+                <button class="theme-toggle" id="theme-toggle">
+                    <span id="theme-icon">🌙</span>
+                    <span id="theme-text">Dark Mode</span>
+                </button>
+            </div>
+            <nav>
+                <a href="index.html" class="header-button">Home</a>
+                <a href="budget.html" class="header-button">Budget</a>
+                <a href="invest.html" class="header-button">Investment</a>
+                <a href="simpleloan.html" class="header-button">Loan</a>
+            </nav>
+        </div>
+        <div class="datetime-display">
+            <h3 id="current-time"></h3>
+            <p id="current-date"></p>
+        </div>
+        
+        <!-- Upper Box for Inputs -->
+        <div class="budget-box input-box">
+            <h2 class="section-title">Add New Expense</h2>
+            <div class="budget-section">
+                <div class="input-section">
+                    <label for="income">Monthly Income:</label>
+                    <input type="number" id="income" placeholder="Enter your income">
+                </div>
+                <div class="input-section">
+                    <label for="expense">Expense Description:</label>
+                    <input type="text" id="expense" placeholder="Enter expense description">
+                </div>
+                <div class="input-section">
+                    <label for="amount">Expense Amount:</label>
+                    <input type="number" id="amount" placeholder="Enter expense amount">
+                </div>
+                <div class="button-container">
+                    <button id="addExpense">Add Expense</button>
+                    <button id="calculateBudget">Calculate Budget</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Box for Chart -->
+        <div class="budget-box chart-box">
+            <h2 class="section-title">Budget Distribution</h2>
+            <div class="chart-container">
+                <canvas id="budgetPieChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Lower Box for Expenses -->
+        <div class="budget-box display-box">
+            <div class="expense-list-container">
+                <div class="expense-header">
+                    <h2>Expenses</h2>
+                    <span class="total-expenses" id="totalExpensesDisplay">Total: ₹0</span>
+                </div>
+                <ul id="expenseList"></ul>
+            </div>
+
+            <div id="remainingBudget">Remaining Budget: ₹0</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+    <footer>
+        <div class="author-text">
+            <p>Made with ❤️ by <a href="https://github.com/RohitChouhan45" target="_blank"><b>Rohit Chouhan</b></a></p>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget and Investment</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Finance Tracker</h1>
+            <div class="header-controls">
+                <button class="theme-toggle" id="theme-toggle">
+                    <span id="theme-icon">🌙</span>
+                    <span id="theme-text">Dark Mode</span>
+                </button>
+                <nav>
+                    <a href="index.html" class="header-button">Home</a>
+                    <a href="budget.html" class="header-button">Budget</a>
+                    <a href="invest.html" class="header-button">Investment</a>
+                    <a href="simpleloan.html" class="header-button">Loan</a>
+                </nav>
+            </div>
+        </div>
+        <div class="datetime-display">
+            <h3 id="current-time"></h3>
+            <p id="current-date"></p>
+        </div>
+
+        <!-- Upper Box for Inputs -->
+        <div class="budget-box input-box">
+            <h2 class="section-title">Investment Portfolio</h2>
+            <div class="budget-section">
+                <div class="input-section">
+                    <label for="total-investment">Total Investment Goal:</label>
+                    <input type="number" id="total-investment" placeholder="Enter your investment target">
+                </div>
+                <div class="input-section">
+                    <label for="investment-type">Investment Type:</label>
+                    <select id="investment-type">
+                        <option value="stocks">Stocks</option>
+                        <option value="mutual_funds">Mutual Funds</option>
+                        <option value="fixed_deposit">Fixed Deposit</option>
+                        <option value="real_estate">Real Estate</option>
+                        <option value="gold">Gold</option>
+                        <option value="crypto">Cryptocurrency</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="input-section">
+                    <label for="investment">Investment Description:</label>
+                    <input type="text" id="investment" placeholder="E.g., HDFC Bank Shares">
+                </div>
+                <div class="input-section">
+                    <label for="amount">Investment Amount:</label>
+                    <input type="number" id="amount" placeholder="Enter investment amount">
+                </div>
+                <div class="button-container">
+                    <button id="addInvestment">Add Investment</button>
+                    <button id="calculateInvestment">Update Goal</button>
+                    <button id="resetInvestment" class="reset-button">🗑️ Reset All</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Box for Charts -->
+        <div class="budget-box chart-box">
+            <div class="charts-grid">
+                <div class="chart-section">
+                    <h2 class="section-title">Investment Distribution</h2>
+                    <div class="chart-container">
+                        <canvas id="investmentPieChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-section">
+                    <h2 class="section-title">Investment by Type</h2>
+                    <div class="chart-container">
+                        <canvas id="investmentTypeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lower Box for Investments List -->
+        <div class="budget-box display-box">
+            <div class="investment-summary">
+                <div class="summary-card">
+                    <h3>Total Invested</h3>
+                    <p id="totalInvestmentsDisplay">₹0</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Investment Goal</h3>
+                    <p id="investmentGoal">₹0</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Progress</h3>
+                    <div class="progress-bar">
+                        <div class="progress" id="investmentProgress"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="investment-list-container">
+                <div class="list-header">
+                    <h2>Investment Portfolio</h2>
+                    <div class="filter-container">
+                        <select id="typeFilter">
+                            <option value="all">All Types</option>
+                            <option value="stocks">Stocks</option>
+                            <option value="mutual_funds">Mutual Funds</option>
+                            <option value="fixed_deposit">Fixed Deposit</option>
+                            <option value="real_estate">Real Estate</option>
+                            <option value="gold">Gold</option>
+                            <option value="crypto">Cryptocurrency</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <ul id="investmentList"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="invest.js"></script>
+    <script src="theme.js"></script>
+    <footer>
+        <div class="author-text">
+            <p>Made with ❤️ by <a href="https://github.com/RohitChouhan45" target="_blank"><b>Rohit Chouhan</b></a></p>
+        </div>
+    </footer>
+</body>
+</html> 
